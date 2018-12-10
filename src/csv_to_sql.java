@@ -12,7 +12,6 @@ public class csv_to_sql {
         System.out.print("Enter an output file name: ");
         String outFile = s.next();
         File newFile = new File(outFile);
-
         //Used to know how many lines to write out before creating a new Insert Statement
         System.out.print("Enter the number of lines in you want to insert into: ");
         int linesInCSVFile = s.nextInt();
