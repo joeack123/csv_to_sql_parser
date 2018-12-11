@@ -51,6 +51,5 @@ public class csv_to_sql {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
