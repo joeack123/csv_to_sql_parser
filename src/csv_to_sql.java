@@ -36,7 +36,7 @@ public class csv_to_sql {
                     bw.write("("+Arrays.toString(values)
                             .replace("[","")
                             .replace("]","")
-                            .replace(", ,", ",NULL,")+"),\n");
+                            .replace(", ,", ", NULL,")+"),\n");
                 }
             }
             br.close();
