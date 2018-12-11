@@ -29,10 +29,14 @@ public class csv_to_sql {
             BufferedWriter bw = new BufferedWriter(new FileWriter(filePath+outFile));
             bw.write("INSERT INTO "+ csvFile.substring(0, csvFile.lastIndexOf('.'))
                     +"("+sb.toString().substring(0, sb.toString().lastIndexOf(','))+") VALUES\n");
+            String[] values = {};
             while((line = br.readLine()) != null) {
-                String[] values = line.split(",");
+                values = line.split(",");
                 for(int i = 0; i < values.length; i+=linesInCSVFile) {
-                    bw.write("("+Arrays.toString(values).replace("[","").replace("]","")+"),\n");
+                    bw.write("("+Arrays.toString(values)
+                            .replace("[","")
+                            .replace("]","")
+                            .replace(", ,", ",NULL,")+"),\n");
                 }
             }
             br.close();
